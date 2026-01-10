@@ -6,7 +6,7 @@ class Auteur
 {
 private:
      std::string nom_;
-     int identifiant_ ;
+     int identifiant_;
 public:
     Auteur(int identifiant_ , std::string nom);
     std::string getNom() const;
