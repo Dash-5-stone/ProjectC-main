@@ -8,8 +8,8 @@ Livre::Livre(std::string titre, Auteur& auteur, std::string langue,Date datePubl
 std::string Livre::getTitre() const {
     return titre_;
 }
-std::string Livre::getAuteur() const {
-    return auteur_.getNom();
+Auteur Livre::getAuteur() const {
+    return auteur_;
 }
 std::string Livre::getLangue() const {
     return langue_;
@@ -17,6 +17,9 @@ std::string Livre::getLangue() const {
 std::string Livre::setTitre(std::string titre) {
     titre_=titre;
     
+}
+std::vector<std::string>  Livre::getIdentifiantEmprunteur() const {
+return identifiantEmprunteur_;
 }
 // std::string Livre::setAuteur(std::string auteur) {
 //     auteur_=auteur;

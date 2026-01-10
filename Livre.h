@@ -2,6 +2,7 @@
 #define LIVRE_H
 #include "Date.h"
 #include "Auteur.h"
+#include "Lecteur.h"
 #include <string>
 #include <vector>
 
@@ -20,6 +21,7 @@ std::vector<std::string> identifiantEmprunteur_;
 public:
 Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication, std::string genre, int isbn, bool disponibilite);
 //Livre();
+std::vector<std::string>  getIdentifiantEmprunteur() const ;
 std::string getTitre() const;
 std::string setTitre(std::string titre);
 Auteur getAuteur() const;
@@ -32,7 +34,6 @@ int getIsbn() const;
 int setIsbn(int isbn);
 bool getDisponibilite() const;
 bool setDisponibilite(bool disponibilite);
-
 
 };
 

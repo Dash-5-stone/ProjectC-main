@@ -16,11 +16,14 @@ std::string nom_;
 
 public:
 Bibliotheque();
+std::vector<Livre> getLivres_() const;
+std::vector<Auteur> getAuteurs_() const;
+
 void AjouterAuteur(const Auteur& auteur);
 void AjouterLivre(const Livre& livre);
 void AjouterLecteur(const Lecteur& lecteur) ;
-void EmprunterLivre(std::string identifiant, int isbnLivre, Date emprunt);
-void RetournerLivreEmprunter(const Livre& livre);
+void EmprunterLivre( int isbnLivre, std::string& identifiant);
+void RetournerLivreEmprunter(int isbn, );
 void RechercherLivre(int identifiant) const;
 
 
