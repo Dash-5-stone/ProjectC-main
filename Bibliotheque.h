@@ -23,7 +23,7 @@ void AjouterAuteur(const Auteur& auteur);
 void AjouterLivre(const Livre& livre);
 void AjouterLecteur(const Lecteur& lecteur) ;
 void EmprunterLivre( int isbnLivre, std::string& identifiant);
-void RetournerLivreEmprunter(int isbn, );
+void RetournerLivreEmprunter(int isbn);
 void RechercherLivre(int identifiant) const;
 
 
