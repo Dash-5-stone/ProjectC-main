@@ -32,3 +32,19 @@ void Lecteur::setIdentifiant(std::string identifiant){
 void Lecteur::setPrenom(std::string prenom){
     prenom_=prenom;
 }
+std::ostream& operator<<(std::ostream& os, const Lecteur& lecteur){
+    os << "ID: " << lecteur.identifiant_ 
+    << "Nom: " << lecteur.nom_    
+    << "Prenom: " << lecteur.prenom_   << "Les livres emprunter : " ;
+    if(lecteur.isbnEmprunter_.empty()){
+        std::cout << "Aucun" << std::endl;
+    } 
+    else{
+           for (size_t i = 0; i < lecteur.isbnEmprunter_.size(); i++)
+           {
+            os << lecteur.isbnEmprunter_[i];
+           }      
+    }   
+    return os;
+
+}  

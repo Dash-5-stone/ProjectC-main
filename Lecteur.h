@@ -20,7 +20,7 @@ std::vector<int> isbnEmprunter_;
    void setPrenom(std::string prenom);
     std::vector<int> getIsbnEmprunter() const;
     void setIsbnEmprunter(int isbn);
-
+friend std::ostream& operator<<(std::ostream& os, const Lecteur& lecteur);
 };
 
 #endif

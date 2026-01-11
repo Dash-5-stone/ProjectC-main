@@ -34,6 +34,7 @@ int getIsbn() const;
 int setIsbn(int isbn);
 bool getDisponibilite() const;
 bool setDisponibilite(bool disponibilite);
+friend std::ostream& operator<<(std::ostream& os, const Livre& livre);
 
 };
 

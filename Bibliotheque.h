@@ -22,11 +22,12 @@ std::vector<Auteur> getAuteurs_() const;
 void AjouterAuteur(const Auteur& auteur);
 void AjouterLivre(const Livre& livre);
 void AjouterLecteur(const Lecteur& lecteur) ;
-void EmprunterLivre( int isbnLivre, std::string& identifiant);
-void RetournerLivreEmprunter(int isbn);
+void EmprunterLivre( int isbnLivre, std::string identifiant);
+void RetournerLivreEmprunter(int isbn,  std::string& identifiant);
 void RechercherLivre(int identifiant) const;
+void AfficherInventaire();
 
-
+double CalculerPourcentageEmprunts() const;
 };
 
 #endif

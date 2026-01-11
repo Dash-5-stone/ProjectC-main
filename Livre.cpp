@@ -1,6 +1,6 @@
 #include "Livre.h"
 #include "Auteur.h"
-
+#include <iostream>
 
 
 Livre::Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication, std::string genre, int isbn, bool disponibilite=true):titre_(titre),auteur_(auteur),langue_(langue),genre_(genre),datePublication_(datePublication),disponibilite_(disponibilite){
@@ -50,5 +50,9 @@ std::string Livre::setLangue(std::string langue){
     langue_=langue;
    
 }
-
+std::ostream& operator<<(std::ostream& os, const Livre& livre){
+    os << "Titre: " << livre.titre_ << "Auteur: " << livre.auteur_ << "Langue : " << livre.langue_ << "Date de publication: " << livre.datePublication_  << "Genre :" << livre.genre_  << "ISBN: "<< livre.isbn_ << "Disponibilite: " ; 
+    if(livre.disponibilite_){os << "Disponible ";}else{ os << "Non disponible ";}
+    return os;
+}
 

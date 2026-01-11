@@ -16,7 +16,7 @@ int getMois() const ;
 void setMois(int mois) ;
 int getAnnee() const;
 void setAnnee(int annee);
-
+friend std::ostream& operator<<(std::ostream& os, const Date& date);
 };
 
 #endif

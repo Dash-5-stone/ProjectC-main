@@ -52,10 +52,15 @@ cortex.AjouterLecteur(lec4);
 
 
 
+cortex.AfficherInventaire();
 
-
-
+std::cout << D;
 std::cout << "l'annee est " << D.getAnnee() << D.getJour() << D.getMois() << std::endl; 
+cortex.EmprunterLivre(12356,"dgsmith");
 
+// cortex.CalculerPourcentageEmprunts();
+
+std::cout << "Statistiques de la bibliotheque :" << std::endl;
+std::cout << "Taux d'occupation : " << cortex.CalculerPourcentageEmprunts() << "%" << std::endl;
 
 }

@@ -9,3 +9,8 @@ std::string Auteur::getNom() const{
 int Auteur::getIdentifiant() const{
     return identifiant_;
 }
+std::ostream& operator<<(std::ostream& os, const Auteur& auteur){
+os << auteur.nom_ << "(ID :" << auteur.identifiant_ << ")";
+return os;
+
+}

@@ -35,3 +35,7 @@ void Date::setAnnee(int annee){
      annee_=annee;
      
 }
+std::ostream& operator<<(std::ostream& os, const Date& d) {
+    os << d.getJour() << "/" << d.getMois() << "/" << d.getAnnee();
+    return os;
+}

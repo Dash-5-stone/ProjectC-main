@@ -4,18 +4,23 @@
 
 std::vector<Livre> Bibliotheque::getLivres_() const {
  return livres_;
-};
+}
+
 std::vector<Auteur> Bibliotheque::getAuteurs_() const {
 return auteurs_;
 }
+
 void Bibliotheque::AjouterAuteur(const Auteur& auteur){
- auteurs_.push_back(auteur);}
+ auteurs_.push_back(auteur);
+}
+
 void Bibliotheque::AjouterLivre(const Livre& livre){
     livres_.push_back(livre);}
 
 void Bibliotheque::AjouterLecteur(const Lecteur& lecteur){
     lecteurs_.push_back(lecteur);
 }
+
 void Bibliotheque::RechercherLivre(int identifiant) const {
     for(const Livre& l: livres_ ){
         if (l.getAuteur().getIdentifiant()==identifiant)
@@ -28,7 +33,7 @@ void Bibliotheque::RechercherLivre(int identifiant) const {
             }
          }
 
-void Bibliotheque::EmprunterLivre(int isbn, std::string& identifiant) {
+void Bibliotheque::EmprunterLivre(int isbn, std::string identifiant) {
     for(Livre& livre: livres_){
         if(livre.getIsbn()==isbn && livre.getDisponibilite()){
             livre.getIdentifiantEmprunteur().push_back(identifiant);
@@ -42,7 +47,39 @@ void Bibliotheque::EmprunterLivre(int isbn, std::string& identifiant) {
     }
 }
 
-void Bibliotheque::RetournerLivreEmprunter(int isbn, const std::string& identifiant){
+void Bibliotheque::RetournerLivreEmprunter(int isbn, std::string& identifiant){
+for(Livre& livre: livres_){
+    if(livre.getIsbn()==isbn && livre.getDisponibilite() && livre.getIdentifiantEmprunteur().back()==identifiant){
+        livre.setDisponibilite(true);
+        std::cout << "le livre est restitue avec succes !" << std::endl;
+
+    }else{
+        std::cout << " ERREUR: vous ne pouvez pas restituer ce livre" << std::endl;
+    }
+}
+
+}
+
+void Bibliotheque::AfficherInventaire(){
+for (const auto& livre : livres_) {       
+        std::cout << livre << std::endl;
+    }
+}
 
 
+double Bibliotheque::CalculerPourcentageEmprunts() const {
+    if (livres_.empty()) {
+        return 0.0; 
+    }
+
+    int compteurEmprunts = 0;
+
+    for (const Livre& l : livres_) {
+       
+        if (!l.getDisponibilite()) {
+            compteurEmprunts++;
+        }
+    }
+
+    return (static_cast<double>(compteurEmprunts) / livres_.size()) * 100.0;
 }
