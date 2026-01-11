@@ -78,8 +78,27 @@ double Bibliotheque::CalculerPourcentageEmprunts() const {
        
         if (!l.getDisponibilite()) {
             compteurEmprunts++;
-        }
+        }     
     }
 
     return (static_cast<double>(compteurEmprunts) / livres_.size()) * 100.0;
+}
+
+
+void Bibliotheque::AfficherClassementLecteurs() {
+ 
+    std::vector<Lecteur> listeTriee = lecteurs_;
+    int n = listeTriee.size();
+
+  
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (listeTriee[j].getIsbnEmprunter().size() < listeTriee[j + 1].getIsbnEmprunter().size()) {
+               
+                Lecteur tmp = listeTriee[j];
+                listeTriee[j] = listeTriee[j + 1];
+                listeTriee[j + 1] = tmp;
+            }
+        }
+    }
 }

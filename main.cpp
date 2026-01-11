@@ -63,4 +63,5 @@ cortex.EmprunterLivre(12356,"dgsmith");
 std::cout << "Statistiques de la bibliotheque :" << std::endl;
 std::cout << "Taux d'occupation : " << cortex.CalculerPourcentageEmprunts() << "%" << std::endl;
 
+
 }

@@ -28,6 +28,10 @@ void RechercherLivre(int identifiant) const;
 void AfficherInventaire();
 
 double CalculerPourcentageEmprunts() const;
+
+
+void AfficherClassementLecteurs();
+
 };
 
 #endif
