@@ -15,17 +15,17 @@ Auteur A2(2,"Adams Douglas");
 Auteur A3(3,"Herbert Frank");
 Lecteur lec1("hcfg","joe","dash");
 
-Livre l5("ESIREM",A1,"francais",Date(12,05,2024),"drame",145678,false);
-Livre l6("ESIREM12",A2,"japonais",Date(12,05,2024),"drame",145678,true);
-Livre l1("ESIREM3",A2,"Espagnol",Date(12,05,2024),"drame",145678,false);
+Livre l5("ESIREM",A1,"francais",Date(12,05,2024),"drame",678,false);
+Livre l6("ESIREM12",A2,"japonais",Date(12,05,2024),"drame",146,true);
+Livre l1("ESIREM3",A2,"Espagnol",Date(12,05,2024),"drame",5678,false);
 Livre l2("Polytech",A3,"Anglais",Date(12,05,2024),"drame",145678,true);
-Livre l3("UBE",A1,"francais",Date(12,05,2024),"drame",145678,true);
+Livre l3("UBE",A1,"francais",Date(12,05,2024),"drame",1478,true);
 
-Livre l7("Dijon",A3,"francais",Date(12,05,2024),"drame",145678,false);
-Livre l8("Paris",A1,"francais",Date(12,05,2024),"drame",145678,true);
-Livre l9("Emmanuel Macron",A1,"francais",Date(12,05,2024),"drame",145678,true);
-Livre l4("Mon pays",A3,"francais",Date(12,05,2024),"drame",145678,false);
-Livre l10("Musique",A2,"francais",Date(12,05,2024),"drame",145678,true);
+Livre l7("Dijon",A3,"francais",Date(12,05,2024),"drame",978,false);
+Livre l8("Paris",A1,"francais",Date(12,05,2024),"drame",19878,true);
+Livre l9("Emmanuel Macron",A1,"francais",Date(12,05,2024),"drame",126678,true);
+Livre l4("Mon pays",A3,"francais",Date(12,05,2024),"drame",87678,false);
+Livre l10("Musique",A2,"francais",Date(12,05,2024),"drame",20678,true);
 cortex.AjouterAuteur(A1);
 cortex.AjouterAuteur(A2);
 cortex.AjouterAuteur(A3);
@@ -56,8 +56,9 @@ cortex.AfficherInventaire();
 
 std::cout << D;
 std::cout << "l'annee est " << D.getAnnee() << D.getJour() << D.getMois() << std::endl; 
-cortex.EmprunterLivre(12356,"dgsmith");
-
+//cortex.EmprunterLivre(146,"dgsmith");
+cortex.EmprunterLivre(146, "jdupont");
+//cortex.EmprunterLivre(14678, "dgsmith");
 // cortex.CalculerPourcentageEmprunts();
 
 std::cout << "Statistiques de la bibliotheque :" << std::endl;

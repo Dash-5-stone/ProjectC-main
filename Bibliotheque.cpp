@@ -37,16 +37,28 @@ void Bibliotheque::RechercherLivre(int identifiant) const {
 
 void Bibliotheque::EmprunterLivre(int isbn, std::string identifiant) {
     for(Livre& livre: livres_){
-        if(livre.getIsbn()==isbn && livre.getDisponibilite()){
+        if(livre.getIsbn()==isbn){
+        if(livre.getDisponibilite()){
             livre.getIdentifiantEmprunteur().push_back(identifiant);
-            std::cout <<  identifiant << " a emprunte le livre" << std::endl;
-            livre.setDisponibilite(false);
-        }
-        else{
-             std::cout << "vous ne pouvez pas emprunter le livre" <<std::endl;
             
-        }
+            livre.setDisponibilite(false);
+        
+        for (Lecteur& lecteur : lecteurs_) {
+                if (lecteur.getIdentifiant() == identifiant) {
+                        lecteur.getIsbnEmprunter().push_back(isbn);
+                    }
+                }
+        
+             std::cout << "Succes : " << identifiant << " a emprunte \"" << livre.getTitre() << "\"" << std::endl;
+                return; 
+            } else {
+                std::cout << "Erreur : Le livre est deja emprunte." << std::endl;
+                return;
+            
+            }  
+        } 
     }
+    std::cout << "Erreur : Aucun livre avec l'ISBN " << isbn << " n'existe dans la bibliotheque." << std::endl;
 }
 
 void Bibliotheque::RetournerLivreEmprunter(int isbn, std::string& identifiant){
