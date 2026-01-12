@@ -9,6 +9,7 @@ bool Date::isDate(){
     if ((mois_ < 1) || (mois_ > 12)) return false; 
     if ((mois_ == 2) && (jour_ > 28)) return false; 
     if (((mois_ == 4) || (mois_ == 6)  || (mois_ == 9) || (mois_ == 11)) && (jour_ > 30)) return false; 
+    if(annee_ <= 0) return false;
     return true; 
 };
 

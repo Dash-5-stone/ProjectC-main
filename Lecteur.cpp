@@ -7,7 +7,7 @@ std::string Lecteur::getIdentifiant() const{
     return identifiant_;
 }
 
-std::vector<int> Lecteur::getIsbnEmprunter() const{
+std::vector<int>& Lecteur::getIsbnEmprunter() {
     return isbnEmprunter_;
 }
 void Lecteur::setIsbnEmprunter(int isbnEmprunter){

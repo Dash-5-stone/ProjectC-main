@@ -18,9 +18,10 @@ std::vector<int> isbnEmprunter_;
     std::string getPrenom() const;
    void setNom(std::string nom);
    void setPrenom(std::string prenom);
-    std::vector<int> getIsbnEmprunter() const;
+    std::vector<int>& getIsbnEmprunter() ;
     void setIsbnEmprunter(int isbn);
 friend std::ostream& operator<<(std::ostream& os, const Lecteur& lecteur);
+
 };
 
 #endif

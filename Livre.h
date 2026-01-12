@@ -22,7 +22,10 @@ std::vector<std::string> identifiantEmprunteur_;
 public:
 Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication, std::string genre, int isbn, bool disponibilite);
 //Livre();
-std::vector<std::string>  getIdentifiantEmprunteur() const ;
+// std::vector<std::string>  getIdentifiantEmprunteur() const ;
+std::vector<std::string>& getIdentifiantEmprunteur();
+
+const std::vector<std::string>& getIdentifiantEmprunteur() const;
 std::string getTitre() const;
 void setTitre(std::string titre);
 Auteur getAuteur() const;

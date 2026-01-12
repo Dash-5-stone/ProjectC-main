@@ -19,15 +19,21 @@ void Livre::setTitre(std::string titre) {
     titre_=titre;
     
 }
-std::vector<std::string>  Livre::getIdentifiantEmprunteur() const {
+const std::vector<std::string>&  Livre::getIdentifiantEmprunteur() const {
 return identifiantEmprunteur_;
 }
+std::vector<std::string>&  Livre::getIdentifiantEmprunteur() {
+return identifiantEmprunteur_;
+}
+
+
+
+
 // std::string Livre::setAuteur(std::string auteur) {
 //     auteur_=auteur;
 // }
 void Livre::setDisponibilite(bool disponibilite){
     disponibilite_=disponibilite;
-    
 }
 
 bool Livre::getDisponibilite() const{
@@ -53,7 +59,7 @@ void Livre::setLangue(std::string langue){
 }
 std::ostream& operator<<(std::ostream& os, const Livre& livre){
     os << " Titre: " << livre.titre_ << " Auteur: " << livre.auteur_ << " Langue : " << livre.langue_ 
-    << " Date de publication: " << livre.datePublication_.getJour()  << " Genre : " << livre.genre_  << " ISBN: "<< livre.isbn_ << " Disponibilite: " ; 
+    << " Date de publication: " << livre.datePublication_.getJour() << "/" << livre.datePublication_.getMois() << "/" << livre.datePublication_.getAnnee() << " Genre : " << livre.genre_  << " ISBN: "<< livre.isbn_ << " Disponibilite: " ; 
     if(livre.disponibilite_){os << " Disponible ";}else{ os << " Non disponible ";}
     return os;
 }

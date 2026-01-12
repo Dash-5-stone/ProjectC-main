@@ -20,6 +20,7 @@ Bibliotheque();
 std::vector<Livre> getLivres_() const;
 std::vector<Auteur> getAuteurs_() const;
 
+void RechercherLivreParLecteur(std::string identifiant) ;
 void AjouterAuteur(const Auteur& auteur);
 void AjouterLivre(const Livre& livre);
 void AjouterLecteur(const Lecteur& lecteur) ;

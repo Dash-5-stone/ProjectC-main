@@ -54,15 +54,17 @@ cortex.AjouterLecteur(lec4);
 
 cortex.AfficherInventaire();
 
-std::cout << D;
+std::cout << D <<std::endl;
 std::cout << "l'annee est " << D.getAnnee() << D.getJour() << D.getMois() << std::endl; 
 //cortex.EmprunterLivre(146,"dgsmith");
 cortex.EmprunterLivre(146, "jdupont");
-//cortex.EmprunterLivre(14678, "dgsmith");
+cortex.EmprunterLivre(14678, "dgsmith");
 // cortex.CalculerPourcentageEmprunts();
 
 std::cout << "Statistiques de la bibliotheque :" << std::endl;
 std::cout << "Taux d'occupation : " << cortex.CalculerPourcentageEmprunts() << "%" << std::endl;
 
+cortex.RechercherLivreParLecteur("jdupont");
+cortex.AfficherClassementLecteurs();
 
 }
