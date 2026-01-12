@@ -10,7 +10,7 @@ int Auteur::getIdentifiant() const{
     return identifiant_;
 }
 std::ostream& operator<<(std::ostream& os, const Auteur& auteur){
-os << auteur.nom_ << "(ID :" << auteur.identifiant_ << ")";
+os << auteur.nom_ << "(ID : " << auteur.identifiant_ << ") ";
 return os;
 
 }

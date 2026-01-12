@@ -16,8 +16,8 @@ Auteur A3(3,"Herbert Frank");
 Lecteur lec1("hcfg","joe","dash");
 
 Livre l5("ESIREM",A1,"francais",Date(12,05,2024),"drame",145678,false);
-Livre l6("ESIREM12",A2,"francais",Date(12,05,2024),"drame",145678,true);
-Livre l1("ESIREM3",A2,"francais",Date(12,05,2024),"drame",145678,false);
+Livre l6("ESIREM12",A2,"japonais",Date(12,05,2024),"drame",145678,true);
+Livre l1("ESIREM3",A2,"Espagnol",Date(12,05,2024),"drame",145678,false);
 Livre l2("Polytech",A3,"Anglais",Date(12,05,2024),"drame",145678,true);
 Livre l3("UBE",A1,"francais",Date(12,05,2024),"drame",145678,true);
 

@@ -2,9 +2,7 @@
 #include "Date.h"
 #include <assert.h>
 
-Date::Date(int jour, int mois, int annee):jour_(jour),mois_(mois),annee_(annee){
-    
-     
+Date::Date(int jour, int mois, int annee):jour_(jour),mois_(mois),annee_(annee){ 
 }
 bool Date::isDate(){
     if ((jour_ < 1) || (jour_ > 31)) return false; 
@@ -35,7 +33,7 @@ void Date::setAnnee(int annee){
      annee_=annee;
      
 }
-std::ostream& operator<<(std::ostream& os, const Date& d) {
-    os << d.getJour() << "/" << d.getMois() << "/" << d.getAnnee();
+std::ostream& operator<<(std::ostream& os, const Date& date) {
+    os << date.jour_ << "/" << date.mois_ << "/" << date.annee_;
     return os;
 }

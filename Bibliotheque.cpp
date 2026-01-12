@@ -2,6 +2,8 @@
 #include "Livre.h"
 #include <iostream>
 
+Bibliotheque::Bibliotheque() {}
+
 std::vector<Livre> Bibliotheque::getLivres_() const {
  return livres_;
 }

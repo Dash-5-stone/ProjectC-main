@@ -5,15 +5,16 @@
 #include "Lecteur.h"
 #include <string>
 #include <vector>
-
+#include <iostream>
 class Livre {
 private:
 std::string titre_;
 Auteur& auteur_;
-std::string genre_ ;
-Date datePublication_;
-int isbn_;
 std::string langue_;
+Date datePublication_;
+std::string genre_;
+int isbn_;
+
 bool disponibilite_;
 std::vector<std::string> identifiantEmprunteur_;
 
@@ -23,17 +24,17 @@ Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication
 //Livre();
 std::vector<std::string>  getIdentifiantEmprunteur() const ;
 std::string getTitre() const;
-std::string setTitre(std::string titre);
+void setTitre(std::string titre);
 Auteur getAuteur() const;
 std::string getLangue() const;
 std::string getGenre() const;
-std::string setLangue(std::string langue);
-std::string setGenre(std::string genre);
-std::string setAuteur(std::string auteur);
+void setLangue(std::string langue);
+void setGenre(std::string genre);
+void setAuteur(std::string auteur);
 int getIsbn() const;
-int setIsbn(int isbn);
+void setIsbn(int isbn);
 bool getDisponibilite() const;
-bool setDisponibilite(bool disponibilite);
+void setDisponibilite(bool disponibilite);
 friend std::ostream& operator<<(std::ostream& os, const Livre& livre);
 
 };

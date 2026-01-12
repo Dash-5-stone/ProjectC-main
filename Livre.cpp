@@ -1,9 +1,10 @@
 #include "Livre.h"
 #include "Auteur.h"
+#include "Date.h"
 #include <iostream>
 
 
-Livre::Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication, std::string genre, int isbn, bool disponibilite=true):titre_(titre),auteur_(auteur),langue_(langue),genre_(genre),datePublication_(datePublication),disponibilite_(disponibilite){
+Livre::Livre(std::string titre, Auteur& auteur, std::string langue,Date datePublication, std::string genre, int isbn, bool disponibilite=true):titre_(titre),auteur_(auteur),langue_(langue),datePublication_(datePublication),genre_(genre),isbn_(isbn),disponibilite_(disponibilite){
 };
 std::string Livre::getTitre() const {
     return titre_;
@@ -14,7 +15,7 @@ Auteur Livre::getAuteur() const {
 std::string Livre::getLangue() const {
     return langue_;
 }
-std::string Livre::setTitre(std::string titre) {
+void Livre::setTitre(std::string titre) {
     titre_=titre;
     
 }
@@ -24,7 +25,7 @@ return identifiantEmprunteur_;
 // std::string Livre::setAuteur(std::string auteur) {
 //     auteur_=auteur;
 // }
-bool Livre::setDisponibilite(bool disponibilite){
+void Livre::setDisponibilite(bool disponibilite){
     disponibilite_=disponibilite;
     
 }
@@ -35,24 +36,25 @@ bool Livre::getDisponibilite() const{
 int Livre::getIsbn() const{
     return isbn_;
 }
-int Livre::setIsbn(int isbn) {
+void Livre::setIsbn(int isbn) {
     isbn_=isbn;
    
 }
-std::string Livre::setGenre(std::string genre){
+void Livre::setGenre(std::string genre){
     genre_=genre;
    
 }
 std::string Livre::getGenre() const{
     return genre_;
 }
-std::string Livre::setLangue(std::string langue){
+void Livre::setLangue(std::string langue){
     langue_=langue;
    
 }
 std::ostream& operator<<(std::ostream& os, const Livre& livre){
-    os << "Titre: " << livre.titre_ << "Auteur: " << livre.auteur_ << "Langue : " << livre.langue_ << "Date de publication: " << livre.datePublication_  << "Genre :" << livre.genre_  << "ISBN: "<< livre.isbn_ << "Disponibilite: " ; 
-    if(livre.disponibilite_){os << "Disponible ";}else{ os << "Non disponible ";}
+    os << " Titre: " << livre.titre_ << " Auteur: " << livre.auteur_ << " Langue : " << livre.langue_ 
+    << " Date de publication: " << livre.datePublication_.getJour()  << " Genre : " << livre.genre_  << " ISBN: "<< livre.isbn_ << " Disponibilite: " ; 
+    if(livre.disponibilite_){os << " Disponible ";}else{ os << " Non disponible ";}
     return os;
 }
 

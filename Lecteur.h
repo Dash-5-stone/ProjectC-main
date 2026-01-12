@@ -2,7 +2,7 @@
 #define LECTEUR_H
 #include <string>
 #include <vector>
-
+#include <iostream>
 class Lecteur{
     private:
 std::string identifiant_;

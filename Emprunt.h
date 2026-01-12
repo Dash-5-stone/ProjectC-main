@@ -2,7 +2,7 @@
 #define EMPRUNT_H
 #include "Date.h"
 #include <string>
-
+#include <iostream>
 class Emprunt {
     private:
 Date dateEmprunt_;

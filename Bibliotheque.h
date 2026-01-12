@@ -1,6 +1,7 @@
 #ifndef BIBLIOTHEQUE_
 #define BIBLIOTHEQUE_
 #include <vector>
+#include <iostream>
 #include "Livre.h"
 #include "Lecteur.h"
 #include "Emprunt.h"
